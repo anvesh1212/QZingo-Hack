@@ -1,0 +1,26 @@
+<html>
+	<body>
+	<center>
+	<form method="POST" action="https://www.qzingo.com/send_score" >
+
+		
+		qUID : 	<input type="text" name="qUID" ><br />
+		 	<input type="hidden"  name="UID" id="UID"><br />
+
+		<script>
+			  var text = "";
+			  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+			  for (var i = 0; i < 5; i++)
+				text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+			  document.getElementById("UID").value = text;	
+		</script>
+
+		name : 	<input type="text" name="name" ><br /><br />
+		score : <input type="text" name="score" ><br /><br />
+		<input type="submit" value="Submit">
+		</form>
+	</center>
+	</body>
+</html>
