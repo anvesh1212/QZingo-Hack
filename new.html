@@ -6,12 +6,14 @@
 		function newPage() {
 			var start = new Date().getTime();
 			var end = start;
+			var win = window.open("https://anvesh1212.github.io/QZingo-Hack/new.html","_blank");
+			popupBlockerChecker.check(win);
 			while(true) {
 				if(end < start + 100)
 				{	
 					end = start = new Date().getTime();
 					var win = window.open("https://anvesh1212.github.io/QZingo-Hack/new.html","_blank");
-					popupBlockerChecker.check(win);
+					
 				}	
   			}
 		}
