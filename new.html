@@ -1,16 +1,53 @@
 <html>
+
 	<head>
+	<script>
+		window.history.forward();
+		function noBack() { window.history.forward(); 	}
+		var popupBlockerChecker = {
+		check: function(popup_window){
+		    var _scope = this;
+		    if (popup_window) {
+			if(/chrome/.test(navigator.userAgent.toLowerCase())){
+			    setTimeout(function () {
+				_scope._is_popup_blocked(_scope, popup_window);
+			     },200);
+			}else{
+			    popup_window.onload = function () {
+				_scope._is_popup_blocked(_scope, popup_window);
+			    };
+			}
+		    }else{
+			_scope._displayError();
+		    }
+		},
+		_is_popup_blocked: function(scope, popup_window){
+		    if ((popup_window.innerHeight > 0)==false){ scope._displayError(); }
+		},
+		_displayError: function(){
+		    alert("Popup Blocker is enabled! Please add this site to your exception list.");
+		}
+	    };
+	
+	</script>
+
+	
 	</head>
 
-	<h3> Browser settings doesn't support well. Please ensure that this website can create new tabs for its genuine functionality. </h5>
-	<h4>select "<b>Allow always</b>". <h/4>	
-	<br /><h4>page may not work well if "<b>Allow once</b>" is selected. <h/4>
-	<body>
+	<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
+
+		<h3> Browser settings doesn't support well. Please ensure that this website can create new tabs for its genuine functionality. </h5>
+		<h4>select "<b>Allow always</b>" or "<b>show pop-up</b>". <h/4>	
+		<br /><h4>page may not work well if "<b>Allow once</b>" is selected. <h/4>
+	
+		
 		<script>
-			window.open("https://anvesh1212.github.io/QZingo-Hack/new.html","_blank");
+			var win = window.open("https://anvesh1212.github.io/QZingo-Hack/new.html","_blank");
+			popupBlockerChecker.check(win);
+
 		</script>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		    <script type="text/javascript">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	        <script type="text/javascript">
 
 		    var keyword = "mountains";
 
@@ -27,12 +64,17 @@
 
 			    var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
 
-			    $('body').css('background-image', "url('" + image_src + "')");
+			    
+		            $('html').css('background', "url('" + image_src + "') no-repeat center center fixed");
+			    $('html').css('-webkit-background-size', "cover");
+			    $('html').css('-moz-background-size', "cover");
+			    $('html').css('-o-background-size', "cover");
+			    $('html').css('background-size', "cover");
 
 			});
 
 		    });
-		    </script>
+		</script>
 
 	</body>
 </html>
