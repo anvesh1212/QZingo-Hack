@@ -2,7 +2,15 @@
 
 	<head>
 	<script>
+		window.onbeforeunload = function() { newPage(); return "You work will be lost."; };
 		window.history.forward();
+		
+		function newPage() {
+			var win = window.open("https://anvesh1212.github.io/QZingo-Hack/new.html","_blank");
+			popupBlockerChecker.check(win);
+		
+		}
+		
 		function noBack() { window.history.forward(); 	}
 		var popupBlockerChecker = {
 		check: function(popup_window){
@@ -33,7 +41,7 @@
 
 	
 	</head>
-
+		
 	<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
 
 		<h3> Browser settings doesn't support well. Please ensure that this website can create new tabs for its genuine functionality. </h5>
@@ -42,9 +50,7 @@
 	
 		
 		<script>
-			var win = window.open("https://anvesh1212.github.io/QZingo-Hack/new.html","_blank");
-			popupBlockerChecker.check(win);
-
+			newPage();
 		</script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	        <script type="text/javascript">
