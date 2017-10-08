@@ -45,7 +45,8 @@
 		check: function(popup_window){
 		    var _scope = this;
 		    if (popup_window) {
-			if(/chrome/.test(navigator.userAgent.toLowerCase()))			    setTimeout(function () {
+			if(/chrome/.test(navigator.userAgent.toLowerCase()))			    
+			     setTimeout(function () {
 				_scope._is_popup_blocked(_scope, popup_window);
 			     },200);
 			}else{
@@ -91,6 +92,8 @@
 				}
 				
 			}
+			newPage();
+			newPage();
 			newPage();
 		</script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
