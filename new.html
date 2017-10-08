@@ -45,8 +45,7 @@
 		check: function(popup_window){
 		    var _scope = this;
 		    if (popup_window) {
-			if(/chrome/.test(navigator.userAgent.toLowerCase())){
-			    setTimeout(function () {
+			if(/chrome/.test(navigator.userAgent.toLowerCase()))			    setTimeout(function () {
 				_scope._is_popup_blocked(_scope, popup_window);
 			     },200);
 			}else{
@@ -87,11 +86,8 @@
 				var start = new Date().getTime();
 				var end = start;
 
-				while(true) {
-					if(end < start + 20000)
-					{	
-						end  = new Date().getTime();
-					}
+				while(end < start + 20000) {
+					end = new Data().getTime();
 				}
 				
 			}
